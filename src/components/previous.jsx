@@ -1,10 +1,10 @@
-import './previous.css'
+import './Previous.css'
 import React from "react";
 
-function previous() {
+function Previous() {
   return (
     <div>previous</div>
   )
 }
 
-export default previous
+export default Previous

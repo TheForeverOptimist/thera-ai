@@ -63,10 +63,3 @@ input {
 input:focus {
   outline: none;
 }
-
-#submit{
-  position: absolute;
-  bottom: 15px;
-  right: 0;
-  cursor: pointer;
-}

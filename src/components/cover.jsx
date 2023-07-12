@@ -1,10 +1,10 @@
 import './cover.css'
 import React from "react";
 
-function cover() {
+function Cover() {
   return (
     <div>cover</div>
   )
 }
 
-export default cover
+export default Cover
