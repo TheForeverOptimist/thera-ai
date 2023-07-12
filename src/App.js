@@ -15,13 +15,12 @@ function App() {
         </nav>
       </section>
       <section className="main">
-        <h1>Thera-AI</h1>
-        <ul className="feed">
-
-        </ul>
+        <div className="welBack">Hi @User, Welcome Back</div>
+        <div className="newRef"></div>
+        <ul className="feed"></ul>
         <div className="bottom-section">
           <div className="input-container">
-            <input/>
+            <input />
             <div id="submit"></div>
           </div>
           <p className="info">
@@ -29,6 +28,7 @@ function App() {
           </p>
         </div>
       </section>
+     
     </div>
   );
 }

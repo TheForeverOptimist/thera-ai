@@ -1,18 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Oswald&family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Oswald&family=Roboto&display=swap");
 
-*{
+* {
   color: #fff;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
-
 }
 
 .app {
-  background-color: #5c0499;
+  background-color: #ffffff;
   display: flex;
 }
 
@@ -23,8 +22,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-
 }
 button {
   border: solid 0.5px rgba(255, 255, 255, 0.5);
@@ -48,7 +45,6 @@ button {
   color: rgba(255, 255, 255, 0.5);
   font-size: 11px;
   padding: 10px;
-
 }
 
 nav {
@@ -69,7 +65,6 @@ nav {
   cursor: pointer;
 }
 
-
 .bottom-section {
   width: 100%;
   display: flex;
@@ -81,7 +76,6 @@ nav {
   position: relative;
   width: 100%;
   max-width: 700px;
-
 }
 
 input {
@@ -90,9 +84,29 @@ input {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 12px 15px;
   border-radius: 5px;
-  box-shadow: rgba(0,0,0, 0.05) 0, 54px, 
+  box-shadow: rgba(0, 0, 0, 0.05) 0, 54px;
 }
 
 input:focus {
   outline: none;
 }
+
+.welBack {
+  margin-top: 5vh;
+  background-color: #000000;
+  width: 75vw;
+  height: 52vh;
+  border-radius: 25px;
+}
+
+.newRef {
+  background-color: #f3e4e4;
+  width: 250px;
+  height: 45vh;
+  z-index: 3;
+  border-radius: 25px;
+  margin-top: -4vh;
+  margin-left: -59vw;
+}
+
+
