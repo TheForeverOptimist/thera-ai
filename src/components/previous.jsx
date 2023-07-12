@@ -1,4 +1,4 @@
-import './previous.css'
+import './Previous.css'
 import React from "react";
 
 function Previous() {

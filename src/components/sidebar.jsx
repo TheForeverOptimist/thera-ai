@@ -1,5 +1,9 @@
 import './sidebar.css'
+<<<<<<< HEAD
 import Previous from './previous'
+=======
+import { Previous } from '.'
+>>>>>>> 69d52c2e74e546f0133414e2dca04b1a93f85dca
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import React from "react";
 
@@ -19,7 +23,7 @@ function Sidebar() {
       </section>
 
       <Previous />
-      <div>sidebar</div>
+      <div >sidebar</div>
     </>
   );
 }
