@@ -2,7 +2,7 @@ import './chat.css'
 import SendIcon from "@mui/icons-material/Send";
 import React from 'react'
 
-function chat() {
+function Chat() {
   return (
     <section className="main">
       <h1>Thera-AI</h1>
@@ -22,4 +22,4 @@ function chat() {
   );
 }
 
-export default chat
+export default Chat

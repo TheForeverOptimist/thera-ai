@@ -1,9 +1,9 @@
 import './sidebar.css'
-import { Previous } from './previous'
+import Previous from './previous'
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import React from "react";
 
-function sidebar() {
+function Sidebar() {
   return (
     <>
       <section className="side-bar">
@@ -24,4 +24,4 @@ function sidebar() {
   );
 }
 
-export default sidebar
+export default Sidebar
