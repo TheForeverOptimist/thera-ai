@@ -1,4 +1,5 @@
 import AddBoxIcon from "@mui/icons-material/AddBox";
+import SendIcon from "@mui/icons-material/Send";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <div className="bottom-section">
           <div className="input-container">
             <input/>
-            <div id="submit"></div>
+            <div id="submit"><SendIcon /></div>
           </div>
           <p className="info">
             Thera-AI is not a substitute for a licensed professional
