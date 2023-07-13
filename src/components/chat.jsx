@@ -1,30 +1,80 @@
 import "./chat.css";
 import SendIcon from "@mui/icons-material/Send";
 import React from "react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Input } from ".";
+import { Button } from ".";
 import { Sidebar } from ".";
 
-function Chat() {
-  const [response, setResponse] = useState("");
+function Chat(props) {
+  const [text, setText] = useState("");
+  const [chat, setChat] = useState([]);
+  const chatParent = useRef(null);
+
+   useEffect(() => {
+      const domNode = chatParent.current;
+      if (domNode) {
+         domNode.scrollTop = domNode.scrollHeight;
+      }
+   })
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!text) return;
+    setChat([...chat, { text }]);
+    console.log(chat);
+    setText("");
+  };
   return (
     <div className="app">
       <Sidebar />
-      <section className="main">
-        <h1>Thera-AI</h1>
-        <ul className="feed"></ul>
-        <div className="bottom-section">
-          <div className="input-container flex gap-3">
-            <Input placeholder="Tell me more..." className="flex-auto" />
-            <div id="submit">
-              <SendIcon className="mt-2" />
+    <section className="main">
+      <div className="chat-container bg-[#1A1A1A] h-[42rem] mt-16 rounded-3xl w-[52rem] pr-5 p-5 flex justify-end flex-col">
+        <div
+          id="chtbox"
+          className="chat chat-end flex flex-col gap-2 overflow-y-auto"
+          ref={chatParent}
+        >
+          {chat.map((message, i) => (
+            <div
+              className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
+              key={i}
+            >
+              {message.text}
             </div>
-          </div>
-          <p className="info">
-            Thera-AI is not a substitute for a licensed professional
-          </p>
+          ))}
         </div>
-      </section>
+      </div>
+
+      <div className="bottom-section flex">
+        <form
+          onSubmit={handleSubmit}
+          className="input-container flex gap-4 bg-[#1A1A1A] p-6 rounded-full"
+        >
+          <Input
+            onChange={(e) => setText(e.target.value)}
+            placeholder="Tell me more..."
+            value={text}
+            name="message"
+            className="flex-auto mt-1.5"
+          />
+          <div id="submit" className="">
+            <Button
+              size="md"
+              variant="default"
+              className="mt-1 rounded-full p-4"
+              type="submit"
+            >
+              <SendIcon  />
+            </Button>
+          </div>
+        </form>
+
+        <p className="info text-blue-700">
+          dAIly is not a substitute for a licensed professional.
+        </p>
+      </div>
+    </section>
     </div>
   );
 }
