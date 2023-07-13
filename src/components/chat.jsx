@@ -4,6 +4,7 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 import { Input } from ".";
 import { Button } from ".";
+import { Sidebar } from ".";
 
 function Chat(props) {
   const [text, setText] = useState("");
@@ -17,7 +18,7 @@ function Chat(props) {
       }
    })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!text) return;
     setChat([...chat, { text }]);
@@ -25,7 +26,9 @@ function Chat(props) {
     setText("");
   };
   return (
-    <section className="main bg-[url('../public/entry-background.svg')]">
+    <div className="app">
+      <Sidebar />
+    <section className="main">
       <div className="chat-container bg-[#1A1A1A] h-[42rem] mt-16 rounded-3xl w-[52rem] pr-5 p-5 flex justify-end flex-col">
         <div
           id="chtbox"
@@ -46,31 +49,33 @@ function Chat(props) {
       <div className="bottom-section flex">
         <form
           onSubmit={handleSubmit}
-          className="input-container flex gap-3 bg-[#1A1A1A] p-4 rounded-full"
+          className="input-container flex gap-4 bg-[#1A1A1A] p-6 rounded-full"
         >
           <Input
             onChange={(e) => setText(e.target.value)}
             placeholder="Tell me more..."
             value={text}
             name="message"
-            className="flex-auto mt-1"
+            className="flex-auto mt-1.5"
           />
           <div id="submit" className="">
             <Button
               size="md"
               variant="default"
-              className="mt-1 rounded-full"
+              className="mt-1 rounded-full p-4"
               type="submit"
             >
-              <SendIcon className="text-black" />
+              <SendIcon  />
             </Button>
           </div>
         </form>
-        <p className="info">
-          Thera-AI is not a substitute for a licensed professional
+
+        <p className="info text-blue-700">
+          dAIly is not a substitute for a licensed professional.
         </p>
       </div>
     </section>
+    </div>
   );
 }
 
