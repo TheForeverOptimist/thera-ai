@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Oswald&family=Roboto&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Oswald&family=Roboto&display=swap');
 
 * {
   color: #fff;
@@ -30,83 +34,4 @@ button {
   padding: 10px;
   margin: 10px;
 }
-
-.main {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-
-.info {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 11px;
-  padding: 10px;
-}
-
-nav {
-  border-top: solid 0.5px rgba(255, 255, 255, 0.5);
-  padding: 10px;
-  margin: 10px;
-}
-
-.history {
-  padding: 10px;
-  margin: 10px;
-  height: 100%;
-}
-
-.history li {
-  list-style-type: none;
-  padding: 15px 0;
-  cursor: pointer;
-}
-
-.bottom-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.input-container {
-  position: relative;
-  width: 100%;
-  max-width: 700px;
-}
-
-input {
-  width: 100%;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 12px 15px;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0, 54px;
-}
-
-input:focus {
-  outline: none;
-}
-
-.welBack {
-  margin-top: 5vh;
-  background-color: #000000;
-  width: 75vw;
-  height: 52vh;
-  border-radius: 25px;
-}
-
-.newRef {
-  background-color: #f3e4e4;
-  width: 250px;
-  height: 45vh;
-  z-index: 3;
-  border-radius: 25px;
-  margin-top: -4vh;
-  margin-left: -59vw;
-}
-
 

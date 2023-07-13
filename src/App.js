@@ -1,34 +1,15 @@
 import AddBoxIcon from "@mui/icons-material/AddBox";
+import SendIcon from "@mui/icons-material/Send";
+import { Sidebar } from "./components";
+import { Cover } from "./components";
+import { Chat } from "./components";
 
 function App() {
   return (
     <div className="app">
-      <section className="side-bar">
-        <button>
-          <AddBoxIcon />
-        </button>
-        <ul className="history">
-          <li>Previous Entry</li>
-        </ul>
-        <nav>
-          <p>Made by the Team-1</p>
-        </nav>
-      </section>
-      <section className="main">
-        <div className="welBack">Hi @User, Welcome Back</div>
-        <div className="newRef"></div>
-        <ul className="feed"></ul>
-        <div className="bottom-section">
-          <div className="input-container">
-            <input />
-            <div id="submit"></div>
-          </div>
-          <p className="info">
-            Thera-AI is not a substitute for a licensed professional
-          </p>
-        </div>
-      </section>
-     
+      <Sidebar />
+      <Cover />
+      {/* <Chat /> */}
     </div>
   );
 }
