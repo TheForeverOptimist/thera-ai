@@ -8,7 +8,9 @@ import React from "react";
 import logo from "../images/heavy-large-circle-svgrepo-com.svg";
 import "./sidebar.css";
 
+
 function Sidebar() {
+
   return (
     <>
       <section className="side-bar bg-gray-900 max-h-screen w-[350px] flex flex-col justify-between overflow-scroll">
