@@ -15,23 +15,10 @@ body {
 }
 
 .app {
-  background-color: #ffffff;
+  background-image: url('../src/images/dashbg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
-}
-
-.side-bar {
-  background-color: #3c3442;
-  height: 100vh;
-  width: 244px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-button {
-  border: solid 0.5px rgba(255, 255, 255, 0.5);
-  background-color: transparent;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
 }
 
