@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { Previous } from ".";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import GradeOutlinedIcon from "@mui/icons-material/GradeOutlined";
@@ -12,22 +10,6 @@ import "./sidebar.css";
 
 
 function Sidebar() {
-  useEffect(() => {
-    const fetchEntries = async () => {
-      try {
-        const response = await axios.get("https://therabot-backend-7c8e6dea9208.herokuapp.com/entry/me", {
-          headers: {
-            "user-id": `${localStorage.getItem("user_id")}`,
-          },
-        });
-        const { entries } = response.data;
-        console.log("entries received", entries)
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchEntries();
-  }, []);
 
   return (
     <>

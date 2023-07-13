@@ -35,7 +35,7 @@ const Login = () => {
         Login Here
       </div>
       <input
-        className="my-1 p-4 border-none rounded-2xl w-full text-[16px]"
+        className="my-1 p-4 border-none rounded-2xl w-full text-[16px] text-black"
         type="text"
         placeholder="Your Email Address"
         value={email}

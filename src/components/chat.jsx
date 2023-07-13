@@ -6,11 +6,11 @@ import { Input } from ".";
 import { Button } from ".";
 import { Sidebar } from ".";
 
-function Chat(props) {
+function Chat(entries) {
   const [text, setText] = useState("");
   const [chat, setChat] = useState([]);
   const chatParent = useRef(null);
-
+  
    useEffect(() => {
       const domNode = chatParent.current;
       if (domNode) {
