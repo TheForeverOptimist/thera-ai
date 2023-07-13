@@ -1,14 +1,15 @@
 
-import AddBoxIcon from "@mui/icons-material/AddBox";
-import SendIcon from "@mui/icons-material/Send";
 import { Sidebar } from "./components";
 import { Cover } from "./components";
 import { Chat } from "./components";
+import { Login } from "./components";
+import React from 'react'
 
 
 function App() {
   return (
     <div className="app">
+      <Login />
       <Sidebar />
       <Cover />
       <Chat />
