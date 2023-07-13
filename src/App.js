@@ -9,7 +9,7 @@ function App() {
     <div className="app">
       <Sidebar />
       <Cover />
-      <Chat />
+      <Chat/>
     </div>
   );
 }
