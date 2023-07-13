@@ -4,15 +4,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Oswald&family=Roboto&display=swap');
 
-*{
+* {
   color: #fff;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
-
 }
 
 .app {
@@ -22,3 +21,4 @@ body {
   background-position: center;
   display: flex;
 }
+
