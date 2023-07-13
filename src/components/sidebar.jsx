@@ -1,6 +1,4 @@
-
-
-import { Previous } from '.'
+import { Previous } from ".";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import GradeOutlinedIcon from "@mui/icons-material/GradeOutlined";
 import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
@@ -8,13 +6,12 @@ import AddReactionOutlinedIcon from "@mui/icons-material/AddReactionOutlined";
 import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
 import React from "react";
 import logo from "../images/heavy-large-circle-svgrepo-com.svg";
-import './sidebar.css'
-
+import "./sidebar.css";
 
 function Sidebar() {
   return (
     <>
-      <section className="side-bar bg-gray-900 min-h-screen w-[350px] flex flex-col justify-between">
+      <section className="side-bar bg-gray-900 max-h-screen w-[350px] flex flex-col justify-between overflow-scroll">
         <div className="m-14 p-6 flex items-center justify-center">
           <img src={logo} alt="logo" />
         </div>
@@ -32,7 +29,9 @@ function Sidebar() {
           <li className="cursor-pointer px-2 py-1 mx-16 my-2">
             July 10th, 2023
           </li>
-          <li className="cursor-pointer px-2 py-1 mx-16 my-2">July 8th, 2023</li>
+          <li className="cursor-pointer px-2 py-1 mx-16 my-2">
+            July 8th, 2023
+          </li>
         </ul>
         <div className="mt-8 flex flex-col space-y-4 my-4">
           <button className=" bg-transparent p-2 flex items-center">
@@ -77,4 +76,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar
+export default Sidebar;
