@@ -46,22 +46,25 @@ function Chat() {
     setText("");
   };
   const handleReflect = async () => {
+    console.log("handleReflect called!")
     const entryData = {
-      user: localStorage.getItem('user-id'),
-      person: "",
+      user: `${localStorage.getItem("user_id")}`,
+      person: selectedPerson,
       mood: mood,
       statements: [[new Date().toISOString(), text]],
     };
-
+    console.log(entryData)
     try {
+      
       const response = await axios.post(
-        "https://therabot-backend-7c8e6dea9208.herokuapp.com/entry",
+        "https://therabot-backend-7c8e6dea9208.herokuapp.com0/ai/entry",
         entryData,
         {
           headers: {
             "user-id": `${localStorage.getItem("user_id")}`,
           },
         }
+
       );
       console.log(response.data);
 
@@ -246,6 +249,9 @@ function Chat() {
             </Button>
           </div>
         </form>
+        <Button type="submit" onClick={handleReflect}>
+          I'm Done
+        </Button>
         <p className="info text-blue-700">
           dAIly is not a substitute for a licensed professional.
         </p>
