@@ -3,7 +3,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import circlesImage from "../images/multiplecircles.svg";
 import logo from "../images/daily_logo.png";
-import bg from "../images/loginbg.png"
+import bg from "../images/loginbg.png";
+import './Login.css'
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -35,10 +37,10 @@ const Login = () => {
 
   return (
     <div
-      className="relative min-h-screen max-height-[95vh] bg-cover bg-no-repeat object-fit-contain"
+      className="relative min-h-screen max-height-[95vh] bg-cover bg-no-repeat object-fit-contain overflow-hidden"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div className="bg-black fixed inset-0 m-auto rounded-3xl w-[1026px] h-[695px]">
+      <div className="bg-[#1A1A1A] fixed inset-0 m-auto rounded-3xl w-[1026px] h-[695px]">
         <div className="mt-[75px] ml-[390px]">
           <img src={circlesImage} alt="circles" />
         </div>
@@ -64,23 +66,56 @@ const Login = () => {
         />
         <div className="ml-[666px] p-2">Forgot password?</div>
         <div className="button-container flex">
-          <div className="w-[117px] h-[114px] z-[1] bg-white rounded-full relative flex items-center justify-center">
+          <div className="w-[117px] h-[114px] ml-[635px] mt-[50px] z-[1] bg-white rounded-full relative flex items-center justify-center">
+
             <span className="text-black font-bold m-4">Sign Up</span>
           </div>
           <div
-            className="w-[117px] h-[114px] z-[1] bg-white rounded-full relative flex items-center justify-center cursor-pointer"
+            className="w-[117px] h-[114px] ml-[25px] z-[1] mt-[50px] bg-white rounded-full relative flex items-center justify-center cursor-pointer"
             onClick={handleLogin}
           >
             <span className="text-black font-bold m-4">Log In</span>
           </div>
         </div>
+        <div
+          className="relative border-4 border-[#5D70FF] bg-transparent w-[450px] h-[450px] mt-[-200px] ml-[-300px] rounded-full"
+          style={{ zIndex: 1 }}
+        ></div>
+        <div
+          className="relative w-[200px] h-[200px] ml-[-30px] mt-[-450px] border-4 border-[#8BB1F7] bg-transparent rounded-full"
+          style={{ zIndex: 2, left: "50px", top: "50px" }}
+        ></div>
+        <div
+          className="relative w-[500px] h-[500px] ml-[800px] mt-[-850px] border-4 border-[#71D195] bg-transparent rounded-full"
+          style={{ zIndex: 2 }}
+        ></div>
+        <div
+          className="relative w-[100px] h-[100px] ml-[900px] mt-[-250px] border-2 border-[#F5BF4D] bg-transparent rounded-full"
+          style={{ zIndex: 0 }}
+        ></div>
+        <div className="fixed top-1 left-1 p-2 m-2">
+          <img src={logo} alt="logo" />
+        </div>
       </div>
+      <div
+        className="w-[175px] h-[175px] mt-[600px] ml-[350px] border-4 z-[0] border-green-500 bg-transparent rounded-full"
+        style={{ zIndex: 0 }}
+      ></div>
+      <div
+        className="w-[300px] h-[300px] mt-[-700px] ml-[1150px] border-4 z-[0] border-[#E75255] bg-transparent rounded-full"
+        style={{ zIndex: 0 }}
+      ></div>
+      <div
+        className="w-[175px] h-[175px] mt-[5px] ml-[1250px] border-4 z-[0] border-green-500 bg-transparent rounded-full"
+        style={{ zIndex: 0 }}
+      ></div>
+      <div
+        className="w-[475px] h-[475px] mt-[-750px] ml-[1250px] border-4 z-[0] border-[#ED794D] bg-transparent rounded-full"
+        style={{ zIndex: 2 }}
+      ></div>
       <div className="ml-[525px] mt-[-4rem] text-white">
         By signing up, you agree to Daily’s <br></br>Terms and Conditions &
         Privacy Policy.
-      </div>
-      <div className="mt-[-850px]">
-        <img src={logo} alt="logo" />
       </div>
     </div>
   );
