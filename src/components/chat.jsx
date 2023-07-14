@@ -75,7 +75,7 @@ function Chat() {
               className="transition-all hover:opacity-70 hover:scale-125 cursor-pointer"
               onClick={() => {
                 setMood(3);
-                setText('😐')
+                setText('😐');
               }}
             >
               😐
