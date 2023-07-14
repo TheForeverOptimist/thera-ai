@@ -4,17 +4,39 @@ import GradeOutlinedIcon from "@mui/icons-material/GradeOutlined";
 import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 import AddReactionOutlinedIcon from "@mui/icons-material/AddReactionOutlined";
 import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
-import logo from "../images/logo_dm.png";
+import logo from "../images/Screen_Shot_2023-07-14_at_9.52.59_AM-removebg-preview.png";
 import "./sidebar.css";
 import axios from "axios";
-import {useNavigate} from 'react-router-dom'
+import { Cover } from ".";
+import { Chat } from ".";
+import { Previous } from "."
 
 
 function Sidebar() {
   const [entries, setEntries] = useState([])
   const [person, setPersons] = useState({})
-
   const [toggleSide, setToggleSide] = useState(false);
+  const [activeComponent, setActiveComponent] = useState('cover');
+  const [entryProp, setEntryProp] = useState({})
+
+  const handleComponentChange = (componentName, entry) => {
+    switch (componentName) {
+      case "cover":
+        setActiveComponent('cover');
+        break;
+      case "chat":
+        setActiveComponent('chat');
+        break;
+      case "previous":
+        setActiveComponent('previous');
+        setEntryProp(entry);
+        
+        break;
+      default:
+        setActiveComponent('cover');
+        break;
+    }
+  };
 
   const showSide = () => {
     setToggleSide(!toggleSide);
@@ -31,9 +53,8 @@ function Sidebar() {
             },
           }
         );
-        setEntries(response.data)
-        console.log(entries)
-
+        setEntries(response.data.entries)
+        // console.log(entries)
       } catch (error) {
         console.error(error);
       }
@@ -45,7 +66,7 @@ function Sidebar() {
     const fetchPeople = async () => {
       try {
         const response = await axios.get(
-          "https://therabot-backend-7c8e6dea9208.herokuapp.com/people/me",
+          "https://therabot-backend-7c8e6dea9208.herokuapp.com/person/me",
           {
             headers: {
               "user-id": `${localStorage.getItem("user_id")}`,
@@ -62,6 +83,7 @@ function Sidebar() {
   
   return (
     <>
+      <div className="app">
       {toggleSide ? (
         <>
           <section
@@ -69,7 +91,8 @@ function Sidebar() {
             className="side-bar bg-[#000000] max-h-screen w-[350px] flex flex-col justify-between="
           >
             <div className="m-14 p-6 flex items-center justify-center">
-              <img src={logo} alt="logo" />
+              <img src={logo} alt="logo"
+              onClick={() => handleComponentChange('cover')}/>
             </div>
             <div className="text-gray-500 font-semibold mx-10 my-2">Recent</div>
             <ul>
@@ -90,8 +113,10 @@ function Sidebar() {
                 July 8th, 2023
               </li>
             </ul>
+
             <div className="mt-8 flex flex-col space-y-4 my-4">
-              <button className=" rounded transition-colors duration-300 hover:bg-neutral-800 p-2 flex items-center">
+              <button className="bg-transparent p-2 flex items-center"
+                onClick={() => handleComponentChange('chat')}>
                 <div className="flex items-center text-white">
                   <AddBoxIcon className="ml-5" />
                   <span className="tracking-widest ml-10" onClick={() => navigate('/chat')}>New Reflection</span>
@@ -131,6 +156,9 @@ function Sidebar() {
               </p>
             </nav>
           </section>
+          {activeComponent === 'cover' && <Cover />}
+          {activeComponent === 'chat' && <Chat />}
+          {activeComponent === 'previous' && <Previous entryProp={entryProp} />}
         </>
       ) : (
         <>
@@ -140,7 +168,7 @@ function Sidebar() {
             className="side-bar bg-[#000000] max-h-screen w-[100px] flex flex-col justify-between"
           >
             <div className="flex items-center justify-center">
-              <img src={logo} alt="logo" className="w-[80%]" />
+              <img src={logo} alt="logo" className="w-[80%] mt-[20%]" />
             </div>
             <div className="mt-8 flex flex-col space-y-4 my-4">
               <button className=" bg-transparent p-2 flex items-center">
@@ -170,8 +198,13 @@ function Sidebar() {
               </button>
             </div>
           </section>
+          {activeComponent === 'cover' && <Cover />}
+          {activeComponent === 'chat' && <Chat peopleProp={person}/>}
+          {activeComponent === 'previous' && <Previous entryProp={entryProp} peopleProp={person}/>}
         </>
       )}
+      </div>
+  
     </>
   );
 }

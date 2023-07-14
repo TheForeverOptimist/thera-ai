@@ -1,8 +1,7 @@
-import { Cover } from "./components";
-import { Chat } from "./components";
+
+import React from "react";
 import { Login } from "./components";
-import {Previous} from "./components"
-import React, { useEffect, useState } from "react";
+import { Sidebar } from "./components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -10,10 +9,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />}></Route>
-        <Route path="/Home" element={<Cover />}></Route>
-        <Route path="/Chat" element={<Chat />}></Route>
-        <Route path="/Pre" element={<Previous />}></Route>
+        <Route path="*" element={<Login />}/>
+        <Route path="/home" element={<Sidebar />} />
       </Routes>
     </BrowserRouter>
   );

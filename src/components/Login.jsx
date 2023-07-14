@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import circlesImage from "../images/multiplecircles.svg";
 import logo from "../images/daily_logo.png";
+import bg from "../images/loginbg.png"
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -35,16 +35,11 @@ const Login = () => {
   };
 
   return (
-    <div className="loginScreen">
-      <div className="button-container">
-      <div className="w-[117px] h-[114px] ml-[945px] mt-[800px] z-[1] bg-white rounded-full sticky flex items-center justify-center">
-        <span className="text-black font-bold m-4">Sign Up</span>
-      </div>
-      <div className="w-[117px] h-[114px] ml-[1100px] mt-[-112px] z-[1] bg-white rounded-full sticky flex items-center justify-center cursor-pointer" onClick={handleLogin}>
-        <span className="text-black font-bold m-4">Log In</span>
-      </div>
-      </div>
-      <div className="bg-black absolute inset-0 m-auto rounded-3xl shadow-2xl w-[1026px] h-[695px]">
+    <div
+      className="relative min-h-screen max-height-[95vh] bg-cover bg-no-repeat object-fit-contain"
+      style={{ backgroundImage: `url(${bg})` }}
+    >
+      <div className="bg-black fixed inset-0 m-auto rounded-3xl w-[1026px] h-[695px]">
         <div className="mt-[75px] ml-[390px]">
           <img src={circlesImage} alt="circles" />
         </div>
@@ -69,13 +64,24 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <div className="ml-[666px] p-2">Forgot password?</div>
+        <div className="button-container flex">
+          <div className="w-[117px] h-[114px] mt-[] z-[1] bg-white rounded-full relative flex items-center justify-center">
+            <span className="text-black font-bold m-4">Sign Up</span>
+          </div>
+          <div
+            className="w-[117px] h-[114px] z-[1] bg-white rounded-full relative flex items-center justify-center cursor-pointer"
+            onClick={handleLogin}
+          >
+            <span className="text-black font-bold m-4">Log In</span>
+          </div>
+        </div>
       </div>
       <div className="ml-[525px] mt-[-4rem] text-white">
         By signing up, you agree to Daily’s <br></br>Terms and Conditions &
         Privacy Policy.
       </div>
-      <div className="mt-[-850px]">
-        <img src={logo} alt='logo' />
+      <div className="fixed top-15 left-2 p-2 m-2">
+        <img src={logo} alt="logo" />
       </div>
     </div>
   );
