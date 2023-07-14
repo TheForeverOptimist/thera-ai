@@ -3,7 +3,6 @@ import axios from "axios";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import circlesImage from "../images/multiplecircles.svg";
-import loginBg from "../images/loginbg.png";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -33,7 +32,13 @@ const Login = () => {
   };
 
   return (
-    <div className="app">
+    <div className="loginScreen">
+      <div className="w-[117px] h-[114px] ml-[831px] mt-[735px] z-[1] bg-white rounded-full relative flex items-center justify-center">
+        <span className="text-black font-bold m-4">Sign Up</span>
+      </div>
+      {/* <div className="w-[117px] h-[114px] ml-[20px] mt-[735px] z-[1] bg-white rounded-full relative flex items-center justify-center">
+        <span className="text-black font-bold m-4">Sign Up</span>
+      </div> */}
       <div className="bg-black m-auto rounded-3xl shadow-2xl absolute top-0 left-0 right-0 bottom-0 w-[1026px] h-[695px]">
         <div className="mt-[75px] ml-[390px]">
           <img src={circlesImage} alt="circles" />
@@ -46,7 +51,7 @@ const Login = () => {
         <input
           className="w-[635px] h-[73px] rounded-3xl ml-[196px] bg-white"
           type="text"
-          placeholder="Your Email Address"
+          placeholder="   Your Email Address"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -54,22 +59,17 @@ const Login = () => {
         <input
           className="w-[635px] h-[73px] rounded-3xl ml-[196px] bg-white"
           type="password"
-          placeholder="Your Password"
+          placeholder="   Your Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <div className="ml-[666px] p-2">Forgot password?</div>
+      </div>
+      <div className="ml-[428px] mt-[840px] text-white">
+        By signing up, you agree to Daily’s <br></br>Terms and Conditions &
+        Privacy Policy.
       </div>
     </div>
-
-    // <input className="hidden" type="checkbox" id="terms" />
-    // <label
-    //   className="inline-block relative ml-5 mr-10 top-5 w-[20px] h-[20px] cursor-pointer"
-    //   htmlFor="terms"
-    // ></label>
-    // <span>
-    //   Agree with <a href="https://elevate.app">Terms & Conditions</a>
-    // </span>
-    // <button onClick={handleLogin}>Login</button>
   );
 };
 
