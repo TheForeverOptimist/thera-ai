@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import circlesImage from "../images/multiplecircles.svg";
+import logo from "../images/daily_logo.png";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -33,13 +34,13 @@ const Login = () => {
 
   return (
     <div className="loginScreen">
-      <div className="w-[117px] h-[114px] ml-[831px] mt-[735px] z-[1] bg-white rounded-full relative flex items-center justify-center">
+      <div className="w-[117px] h-[114px] ml-[945px] mt-[800px] z-[1] bg-white rounded-full relative flex items-center justify-center">
         <span className="text-black font-bold m-4">Sign Up</span>
       </div>
-      <div className="w-[117px] h-[114px] ml-[900px] mt-[1px] z-[1] bg-white rounded-full relative flex items-center justify-center">
+      <div className="w-[117px] h-[114px] ml-[1100px] mt-[-112px] z-[1] bg-white rounded-full fixed flex items-center justify-center">
         <span className="text-black font-bold m-4">Log In</span>
       </div>
-      <div className="bg-black m-auto rounded-3xl shadow-2xl absolute top-0 left-0 right-0 bottom-0 w-[1026px] h-[695px]">
+      <div className="bg-black absolute m-auto rounded-3xl shadow-2xl top-0 left-0 right-0 bottom-0 w-[1026px] h-[695px]">
         <div className="mt-[75px] ml-[390px]">
           <img src={circlesImage} alt="circles" />
         </div>
@@ -65,9 +66,12 @@ const Login = () => {
         />
         <div className="ml-[666px] p-2">Forgot password?</div>
       </div>
-      <div className="ml-[428px] mt-1 text-white">
+      <div className="ml-[525px] mt-[-4rem] text-white">
         By signing up, you agree to Daily’s <br></br>Terms and Conditions &
         Privacy Policy.
+      </div>
+      <div className="mt-[-850px]">
+        <img src={logo} alt='logo' />
       </div>
     </div>
   );
