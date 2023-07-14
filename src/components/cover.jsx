@@ -5,17 +5,17 @@ import img from "../Assets/img.png";
 import Sidebar from "./Sidebar";
 import circlesImage from "../images/multiplecircles.svg";
 
+
 function Cover() {
   return (
     <>
       <div className="app">
-        <Sidebar />
         <div className="w-full flex flex-wrap">
           <div className="main">
             <div className="mt-10 bg-black w-[95%] h-[52vh] rounded-[30px] flex justify-between">
               <div className="w-[30%] flex flex-col justify-center items-center">
                 <h1 className="text-[280%] text-left ml-[10%] max-[1321px]:text-[250%] max-[1129px]:text-[220%] max-[807px]:text-[200%] font-serif font-bold">
-                  Hey @User, welcome back!
+                  Hey {localStorage.name}, welcome back!
                 </h1>
               </div>
               <div className="w-[30%] flex flex-col justify-center max-[1150px]:w-[40%] min-[1735px]:w-[30%]">
