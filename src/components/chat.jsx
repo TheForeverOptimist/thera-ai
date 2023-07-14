@@ -25,8 +25,6 @@ function Chat() {
     setText("");
   };
   return (
-    <div className="app">
-      <Sidebar />
       <section className="main">
         <div className="chat-container bg-[#1A1A1A] h-[42rem] mt-16 rounded-3xl w-[52rem] pr-5 p-5 flex justify-end flex-col">
           <div className="overflow-y-auto" ref={chatParent}>
@@ -134,7 +132,6 @@ function Chat() {
           </p>
         </div>
       </section>
-    </div>
   );
 }
 
