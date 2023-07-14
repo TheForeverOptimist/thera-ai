@@ -4,7 +4,6 @@ import GradeOutlinedIcon from "@mui/icons-material/GradeOutlined";
 import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 import AddReactionOutlinedIcon from "@mui/icons-material/AddReactionOutlined";
 import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
-import React from "react";
 import logo from "../images/Screen_Shot_2023-07-14_at_9.52.59_AM-removebg-preview.png";
 import "./sidebar.css";
 import { format } from 'date-fns';
@@ -86,6 +85,7 @@ function Sidebar() {
 
   return (
     <>
+      <div className="app">
       {toggleSide ? (
         <>
           <section
@@ -154,6 +154,9 @@ function Sidebar() {
               </p>
             </nav>
           </section>
+          {activeComponent === 'cover' && <Cover />}
+          {activeComponent === 'chat' && <Chat />}
+          {activeComponent === 'previous' && <Previous entryProp={entryProp} />}
         </>
       ) : (
         <>
@@ -198,6 +201,8 @@ function Sidebar() {
           {activeComponent === 'previous' && <Previous entryProp={entryProp} />}
         </>
       )}
+      </div>
+  
     </>
   );
 }
