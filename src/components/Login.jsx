@@ -36,9 +36,9 @@ const Login = () => {
       <div className="w-[117px] h-[114px] ml-[831px] mt-[735px] z-[1] bg-white rounded-full relative flex items-center justify-center">
         <span className="text-black font-bold m-4">Sign Up</span>
       </div>
-      {/* <div className="w-[117px] h-[114px] ml-[20px] mt-[735px] z-[1] bg-white rounded-full relative flex items-center justify-center">
-        <span className="text-black font-bold m-4">Sign Up</span>
-      </div> */}
+      <div className="w-[117px] h-[114px] ml-[900px] mt-[1px] z-[1] bg-white rounded-full relative flex items-center justify-center">
+        <span className="text-black font-bold m-4">Log In</span>
+      </div>
       <div className="bg-black m-auto rounded-3xl shadow-2xl absolute top-0 left-0 right-0 bottom-0 w-[1026px] h-[695px]">
         <div className="mt-[75px] ml-[390px]">
           <img src={circlesImage} alt="circles" />
@@ -65,7 +65,7 @@ const Login = () => {
         />
         <div className="ml-[666px] p-2">Forgot password?</div>
       </div>
-      <div className="ml-[428px] mt-[840px] text-white">
+      <div className="ml-[428px] mt-1 text-white">
         By signing up, you agree to Daily’s <br></br>Terms and Conditions &
         Privacy Policy.
       </div>
