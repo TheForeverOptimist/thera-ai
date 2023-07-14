@@ -6,6 +6,7 @@ import AddReactionOutlinedIcon from "@mui/icons-material/AddReactionOutlined";
 import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
 import logo from "../images/Screen_Shot_2023-07-14_at_9.52.59_AM-removebg-preview.png";
 import "./sidebar.css";
+import { format } from 'date-fns';
 import axios from "axios";
 import { Cover } from ".";
 import { Chat } from ".";
@@ -88,30 +89,27 @@ function Sidebar() {
         <>
           <section
             onClick={showSide}
-            className="side-bar bg-[#000000] max-h-screen w-[350px] flex flex-col justify-between="
+            className="side-bar bg-[#000000] max-h-screen w-[350px] flex flex-col justify-between"
           >
             <div className="m-14 p-6 flex items-center justify-center">
               <img src={logo} alt="logo"
               onClick={() => handleComponentChange('cover')}/>
             </div>
-            <div className="text-gray-500 font-semibold mx-10 my-2">Recent</div>
+            <div className="text-gray-500 font-semibold mx-10 my-2">Earlier This Month</div>
             <ul>
-              <li className="cursor-pointer rounded transition-colors duration-300 hover:bg-neutral-800 px-2 py-1 mx-16 my-2">
-                {console.log(entries)}
-                July 10th, 2023
-              </li>
-              <li className="rounded transition-colors duration-300 hover:bg-neutral-800 cursor-pointer px-2 py-1 mx-16 my-2">
-                July 8th, 2023
-              </li>
-            </ul>
-            <div className="text-gray-500 font-semibold mx-10 my-2">Earlier</div>
-            <ul>
-              <li className="rounded transition-colors duration-300 hover:bg-neutral-800 cursor-pointer px-2 py-1 mx-16 my-2">
-                July 10th, 2023
-              </li>
-              <li className="rounded transition-colors duration-300 hover:bg-neutral-800 cursor-pointer px-2 py-1 mx-16 my-2">
-                July 8th, 2023
-              </li>
+              {entries.length > 0 ? (
+                entries.map((entry) => (
+                  <li
+                    className="cursor-pointer px-2 py-1 mx-16 my-2"
+                    key={entry._id}
+                    onClick={() => handleComponentChange('previous', entry)}
+                  >
+                    {format(new Date(entry.creation_date), 'EEEE, MMMM d, yyyy')}
+                  </li>
+                ))
+              ) : (
+                <p>Loading entries...</p>
+              )}
             </ul>
 
             <div className="mt-8 flex flex-col space-y-4 my-4">
@@ -119,7 +117,7 @@ function Sidebar() {
                 onClick={() => handleComponentChange('chat')}>
                 <div className="flex items-center text-white">
                   <AddBoxIcon className="ml-5" />
-                  <span className="tracking-widest ml-10" onClick={() => navigate('/chat')}>New Reflection</span>
+                  <span className="tracking-widest ml-10">New Reflection</span>
                 </div>
               </button>
               <button className=" rounded transition-colors duration-300 hover:bg-neutral-800 p-2 flex items-center">
