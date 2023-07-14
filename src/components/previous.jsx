@@ -14,7 +14,6 @@ function Previous({ entryProp, peopleProp }) {
     };
 
     return (
-        <div className="app">
             <section className="main">
                 <div className="chat-container bg-[#1A1A1A] h-[42rem] mt-16 rounded-3xl w-[52rem] pr-5 p-5 flex justify-end flex-col">
                     <div
@@ -82,7 +81,6 @@ function Previous({ entryProp, peopleProp }) {
                     </div>
                 </div>
             </section>
-        </div>
     )
 
 }
