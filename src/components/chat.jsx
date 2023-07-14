@@ -30,6 +30,8 @@ function Chat(entries) {
       <Sidebar />
     <section className="main">
       <div className="chat-container bg-[#1A1A1A] h-[42rem] mt-16 rounded-3xl w-[52rem] pr-5 p-5 flex justify-end flex-col">
+        <div>How are you feeling today?</div>
+        <div>Smiley Faces</div>
         <div
           id="chtbox"
           className="chat chat-end flex flex-col gap-2 overflow-y-auto"
