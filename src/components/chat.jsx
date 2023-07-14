@@ -6,11 +6,11 @@ import { Input } from ".";
 import { Button } from ".";
 import { Sidebar } from ".";
 
-function Chat() {
+function Chat(entries) {
   const [text, setText] = useState("");
   const [chat, setChat] = useState([]);
   const chatParent = useRef(null);
-  
+
   useEffect(() => {
     const domNode = chatParent.current;
     if (domNode) {
@@ -30,7 +30,7 @@ function Chat() {
           <div className="overflow-y-auto" ref={chatParent}>
           <div id="chtbox" className="chat chat-start flex flex-col gap-2">
                   <div
-                    className="chat-bubble max-w-xl break-normal text-start ml-3 bg-stone-50 text-[#1A1A1A] mb-4"
+                    className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
                   >
                     How are you feeling today?
                   </div>
@@ -43,7 +43,7 @@ function Chat() {
                   className="chat chat-end flex flex-col gap-2"
                 >
                   <div
-                    className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
+                    className="chat-bubble max-w-xl break-normal text-start ml-3 bg-stone-50 text-[#1A1A1A] mb-4"
                     key={i}
                   >
                     {message.text}
@@ -68,7 +68,7 @@ function Chat() {
                   className="chat chat-end flex flex-col gap-2"
                 >
                   <div
-                    className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
+                    className="chat-bubble max-w-xl break-normal text-start ml-3 bg-stone-50 text-[#1A1A1A] mb-4"
                     key={i}
                   >
                     {message.text}
@@ -92,7 +92,7 @@ function Chat() {
                   className="chat chat-end flex flex-col gap-2"
                 >
                   <div
-                    className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
+                    className="chat-bubble max-w-xl break-normal text-start ml-3 bg-stone-50 text-[#1A1A1A] mb-4"
                     key={i}
                   >
                     {message.text}
