@@ -57,7 +57,7 @@ function Chat() {
     try {
       
       const response = await axios.post(
-        "https://therabot-backend-7c8e6dea9208.herokuapp.com0/ai/entry",
+        "https://therabot-backend-7c8e6dea9208.herokuapp.com/ai/entry",
         entryData,
         {
           headers: {
