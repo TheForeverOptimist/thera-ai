@@ -1,16 +1,18 @@
-import AddBoxIcon from "@mui/icons-material/AddBox";
-import SendIcon from "@mui/icons-material/Send";
+
+import React from "react";
+import { Login } from "./components";
 import { Sidebar } from "./components";
-import { Cover } from "./components";
-import { Chat } from "./components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+
   return (
-    <div className="app">
-      <Sidebar />
-      <Cover />
-      <Chat />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<Login />}/>
+        <Route path="/home" element={<Sidebar />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
