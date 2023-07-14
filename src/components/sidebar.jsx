@@ -4,7 +4,7 @@ import GradeOutlinedIcon from "@mui/icons-material/GradeOutlined";
 import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 import AddReactionOutlinedIcon from "@mui/icons-material/AddReactionOutlined";
 import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
-import logo from "../images/Screen_Shot_2023-07-13_at_7.41.33_PM-removebg-preview.png";
+import logo from "../images/daily_logo.png";
 import "./sidebar.css";
 import { format } from 'date-fns';
 import axios from "axios";
@@ -62,11 +62,11 @@ function Sidebar() {
     <>
       {toggleSide ? (
         <>
-          <section onClick={showSide} className="side-bar bg-[#000000] max-h-screen w-[350px] flex flex-col justify-between overflow-scroll">
+          <section onClick={showSide} className="side-bar bg-[#696868] max-h-screen w-[350px] flex flex-col justify-between">
             <div className="m-14 p-6 flex items-center justify-center">
               <img src={logo} alt="logo" />
             </div>
-            <div className="text-gray-500 mx-10 my-2">This Week</div>
+            <div className="text-black font-semibold mx-10 my-2">This Week</div>
             <ul>
               <li className="cursor-pointer px-2 py-1 mx-16 my-2">
                 July 10th, 2023
@@ -75,7 +75,7 @@ function Sidebar() {
                 July 8th, 2023
               </li>
             </ul>
-            <div className="text-gray-500 mx-10 my-2">Earlier</div>
+            <div className="text-black font-semibold mx-10 my-2">Earlier</div>
             <ul>
               <li className="cursor-pointer px-2 py-1 mx-16 my-2">
                 July 10th, 2023
@@ -120,7 +120,7 @@ function Sidebar() {
             </div>
 
             <nav className="mt-auto">
-              <p className="text-gray-500 text-sm mx-12">Made by the Team-1</p>
+              <p className="text-black font-semibold text-sm mx-12">Made by the Team-1</p>
             </nav>
           </section>
         </>
