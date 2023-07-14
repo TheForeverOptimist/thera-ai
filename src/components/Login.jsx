@@ -64,7 +64,7 @@ const Login = () => {
         />
         <div className="ml-[666px] p-2">Forgot password?</div>
         <div className="button-container flex">
-          <div className="w-[117px] h-[114px] mt-[] z-[1] bg-white rounded-full relative flex items-center justify-center">
+          <div className="w-[117px] h-[114px] z-[1] bg-white rounded-full relative flex items-center justify-center">
             <span className="text-black font-bold m-4">Sign Up</span>
           </div>
           <div
@@ -79,7 +79,7 @@ const Login = () => {
         By signing up, you agree to Daily’s <br></br>Terms and Conditions &
         Privacy Policy.
       </div>
-      <div className="fixed top-15 left-2 p-2 m-2">
+      <div className="mt-[-850px]">
         <img src={logo} alt="logo" />
       </div>
     </div>
