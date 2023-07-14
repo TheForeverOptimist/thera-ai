@@ -49,7 +49,6 @@
     ]
   },
   "devDependencies": {
-    "@types/date-fns": "^2.6.0",
     "css": "^3.0.0",
     "css-loader": "^6.8.1",
     "daisyui": "^3.2.1",

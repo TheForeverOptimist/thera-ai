@@ -81,7 +81,7 @@ function Sidebar() {
     };
     fetchPeople();
   }, []);
-  
+
   return (
     <>
       <div className="app">
@@ -120,7 +120,7 @@ function Sidebar() {
                   <span className="tracking-widest ml-10">New Reflection</span>
                 </div>
               </button>
-              <button className=" rounded transition-colors duration-300 hover:bg-neutral-800 p-2 flex items-center">
+              <button className=" bg-transparent p-2 flex items-center">
                 <div className="flex items-center text-white">
                   <LibraryBooksOutlinedIcon className="ml-5" />
                   <span className="tracking-widest ml-4">
@@ -128,19 +128,19 @@ function Sidebar() {
                   </span>
                 </div>
               </button>
-              <button className=" rounded transition-colors duration-300 hover:bg-neutral-800 p-2 flex items-center">
+              <button className=" bg-transparent p-2 flex items-center">
                 <div className="flex items-center text-white">
                   <GradeOutlinedIcon className="ml-5" />
                   <span className="tracking-widest ml-10">Achievements</span>
                 </div>
               </button>
-              <button className=" rounded transition-colors duration-300 hover:bg-neutral-800 p-2 flex items-center">
+              <button className=" bg-transparent p-2 flex items-center">
                 <div className="flex items-center text-white">
                   <AddReactionOutlinedIcon className="ml-5" />
                   <span className="tracking-widest ml-10">Mood Tracker</span>
                 </div>
               </button>
-              <button className=" rounded transition-colors duration-300 hover:bg-neutral-800 p-2 flex items-center">
+              <button className=" bg-transparent p-2 flex items-center">
                 <div className="flex items-center text-white">
                   <PeopleOutlineOutlinedIcon className="ml-5" />
                   <span className="tracking-widest ml-10">Community</span>
