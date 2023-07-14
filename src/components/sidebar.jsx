@@ -104,7 +104,7 @@ function Sidebar() {
                     key={entry._id}
                     onClick={() => handleComponentChange('previous', entry)}
                   >
-                    {format(new Date(entry.creation_date), 'EEEE, MMMM d, yyyy')}
+                    {format(new Date(entry.creation_date), 'MMMM d, yyyy')}
                   </li>
                 ))
               ) : (

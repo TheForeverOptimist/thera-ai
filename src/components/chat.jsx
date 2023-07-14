@@ -135,10 +135,9 @@ function Chat() {
             {people.map((person) => (
               <div
                 key={person._id}
-                className="transition-all hover:opacity-70 hover:scale-125 cursor-pointer"
+                className="transition-all hover:opacity-70 hover:scale-125 cursor-pointer text-black"
                 onClick={() => {
                   setSelectedPerson(person._id);
-                  setText(`**${person.name}**`);
                 }}
               >
                 {person.name}
@@ -176,8 +175,8 @@ function Chat() {
                   <div
                     className="chat-bubble max-w-xl break-normal text-start ml-3 bg-stone-50 text-[#1A1A1A] mb-4"
                     key='ai'
-                  > {entryPerson()}
-                    Who would you like to talk about?
+                  >
+                    {entryPerson()}
                     <div className="flex gap-4 p-4 text-2xl text-black"></div>
                   </div>
                 </div>
@@ -218,6 +217,8 @@ function Chat() {
               </div>
             )
           )}
+
+          {/* {entryPerson()} */}
         </div>
 
       </div>
