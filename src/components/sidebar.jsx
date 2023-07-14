@@ -89,7 +89,7 @@ function Sidebar() {
         <>
           <section
             onClick={showSide}
-            className="side-bar bg-[#000000] max-h-screen w-[350px] flex flex-col justify-between"
+            className="side-bar bg-[#000000] max-h-screen w-[350px] flex flex-col justify-between overflow-scroll"
           >
             <div className="m-14 p-6 flex items-center justify-center">
               <img src={logo} alt="logo"
