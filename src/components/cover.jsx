@@ -1,6 +1,6 @@
 import "./cover.css";
 import React from "react";
-import { PiPencilBold } from "react-icons/pi";
+import { PiPencilLineLight } from "react-icons/pi";
 import img from "../Assets/img.png";
 import Sidebar from "./Sidebar";
 
@@ -11,40 +11,68 @@ function Cover() {
         <Sidebar />
         <div className="w-full flex flex-wrap">
           <div className="main">
-            <div className="mt-10 bg-black w-[95%] h-[52vh] rounded-2xl flex justify-between">
+            <div className="mt-10 bg-black w-[95%] h-[52vh] rounded-[30px] flex justify-between">
               <div className="w-[30%] flex flex-col justify-center items-center">
-                <h1 className="text-[300%] text-left ml-[10%] max-[1259px]:text-[250%] max-[1129px]:text-[220%] max-[807px]:text-[200%]">
-                  Hey @User, Welcome back!
+                <h1 className="text-[280%] text-left ml-[10%] max-[1321px]:text-[250%] max-[1129px]:text-[220%] max-[807px]:text-[200%] font-serif font-bold">
+                  Hey @User, welcome back!
                 </h1>
               </div>
-              <div className="w-[30%] flex flex-col justify-center max-[1150px]:w-[40%]">
+              <div className="w-[30%] flex flex-col justify-center max-[1150px]:w-[40%] min-[1735px]:w-[30%]">
                 <img src={img} className="w-[100%]" />
               </div>
             </div>
           </div>
+          <div className="w-[100%] h-[35vh] mt-[-40vh] flex z-4 bg-transparent">
+            <div className="w-[100%] items-center flex justify-around">
+              <div className="w-[200px] h-[25vh] bg-transparent mt-[4%] ml-[20%] rounded-full flex flex-col justify-around items-center border-[2px] border-orange-600"></div>
+              <div className="w-[250px] h-[32vh] bg-transparent mt-[4%] ml-[-10%] rounded-full  flex flex-col justify-around items-center border-[2px] border-violet-500"></div>
+              <div className="w-[200px] h-[25vh] bg-transparent ml-[-12%] mt-[2%] rounded-full flex flex-col justify-center items-center"></div>
+            </div>
+          </div>
           <div className="w-[100%] h-[35vh] mt-[-40vh] flex">
-            <div className="bg-[#f3e4e4] w-[250px] h-[330px] z-5 mt-[-60px] rounded-2xl ml-[3.5%] flex flex-col justify-center">
-              <PiPencilBold className="fill-[black] align-center text-[75px] ml-[30%]" />
-              <h2 className="text-center text-[black] text-[25px]">
+            <div className="bg-[white] w-[250px] h-[330px] z-5 mt-[-60px] rounded-[30px] ml-[3.5%] flex flex-col justify-center">
+              <PiPencilLineLight className="fill-[black] align-center text-[75px] ml-[30%]" />
+              <h2 className="text-center text-[black] text-[25px] font-serif">
                 Start New Reflection
               </h2>
             </div>
             <div className="w-[100%] items-center flex justify-around">
-              <div className="w-[200px] h-[30vh] bg-[#777373] mt-[2%] rounded-2xl flex flex-col justify-around items-center">
-                <h2 className=" text-center text-[black] text-[25px]">
+              <div className="w-[200px] h-[25vh] bg-[white] mt-[2%] rounded-full flex flex-col justify-around items-center">
+                <h2 className=" text-center text-[black] text-[25px] font-serif">
                   Previous Refelctions
                 </h2>
               </div>
-              <div className="w-[200px] h-[30vh] bg-[#AEAEAE] mt-[2%] rounded-2xl  flex flex-col justify-around items-center">
-                <h2 className="text-center text-[black] text-[25px]">
-                  Community
-                </h2>
-              </div>
-              <div className="w-[200px] h-[30vh] bg-[#CBC7C7] mt-[2%] rounded-2xl  flex flex-row justify-evenly">
-                <h2 className="text-center text-[black] text-[25px] mt-[15%]">
+              <div className="w-[250px] h-[32vh] bg-[white] mt-[2%] rounded-full  flex flex-col justify-around items-center">
+                <h2 className="text-center text-[black] text-[25px] font-serif">
                   Weekly Mood Tracker
                 </h2>
               </div>
+              <div className="w-[200px] h-[25vh] bg-[white] mt-[2%] rounded-full flex flex-col justify-center items-center">
+                <h2 className="text-center text-[black] text-[25px] mt-[15%] font-serif mb-[15px]">
+                  Community
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div className="w-[100%] h-[35vh] mt-[-40vh] flex z-10 bg-transparent">
+            <div className="bg-transparent w-[250px] h-[330px] z-5 mt-[-70px] rounded-[30px] ml-[3%] flex flex-col justify-center  border-[2px] border-green-500 "></div>
+            <div className="w-[100%] items-center flex justify-around">
+              <div className="w-[200px] h-[25vh] bg-transparent mt-[2%] rounded-full flex flex-col justify-around items-center border-[2px] border-orange-600"></div>
+              <div className="w-[250px] h-[32vh] bg-transparent mt-[2%] rounded-full  flex flex-col justify-around items-center border-[2px] border-violet-500"></div>
+              <div className="w-[200px] h-[25vh] bg-transparent mt-[2%] rounded-full flex flex-col justify-center items-center border-[2px] border-yellow-500"></div>
+            </div>
+          </div>
+          <div className="w-[100%] h-[35vh] mt-[-40vh] flex z-11 bg-transparent">
+            <div className="bg-transparent w-[250px] h-[330px] z-5 mt-[-60px] rounded-[30px] ml-[4%] flex flex-col justify-center  border-[2px] border-green-500 "></div>
+            <div className="w-[100%] items-center flex justify-around">
+              <div className="w-[200px] h-[25vh] bg-transparent mt-[2%] rounded-full flex flex-col justify-around items-center border-[2px] border-orange-600"></div>
+              <div className="w-[250px] h-[32vh] bg-transparent mt-[2%] rounded-full  flex flex-col justify-around items-center border-[2px] border-violet-500"></div>
+              <div className="w-[200px] h-[25vh] bg-transparent mt-[2%] rounded-full flex flex-col justify-center items-center border-[2px] border-yellow-500"></div>
+            </div>
+          </div>
+          <div className="w-[100%] h-[35vh] mt-[-40vh] flex z-11 bg-transparent">
+            <div className="w-[100%] items-center flex justify-around">
+              <div className="w-[200px] h-[25vh] bg-transparent rounded-full ml-[72%] mt-[3%] flex flex-col justify-center items-center border-[2px] border-yellow-500"></div>
             </div>
           </div>
         </div>
