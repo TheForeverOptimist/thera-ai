@@ -6,8 +6,8 @@ import AddReactionOutlinedIcon from "@mui/icons-material/AddReactionOutlined";
 import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
 import logo from "../images/logo_dm.png";
 import "./sidebar.css";
-import { format } from 'date-fns';
 import axios from "axios";
+import {useNavigate} from 'react-router-dom'
 
 
 function Sidebar() {
@@ -33,6 +33,7 @@ function Sidebar() {
         );
         setEntries(response.data)
         console.log(entries)
+
       } catch (error) {
         console.error(error);
       }
@@ -65,14 +66,15 @@ function Sidebar() {
         <>
           <section
             onClick={showSide}
-            className="side-bar bg-[#000000] max-h-screen w-[350px] flex flex-col justify-between"
+            className="side-bar bg-[#000000] max-h-screen w-[350px] flex flex-col justify-between="
           >
             <div className="m-14 p-6 flex items-center justify-center">
               <img src={logo} alt="logo" />
             </div>
-            <div className="text-gray-500 font-semibold mx-10 my-2">This Week</div>
+            <div className="text-gray-500 font-semibold mx-10 my-2">Recent</div>
             <ul>
               <li className="cursor-pointer rounded transition-colors duration-300 hover:bg-neutral-800 px-2 py-1 mx-16 my-2">
+                {console.log(entries)}
                 July 10th, 2023
               </li>
               <li className="rounded transition-colors duration-300 hover:bg-neutral-800 cursor-pointer px-2 py-1 mx-16 my-2">
@@ -92,7 +94,7 @@ function Sidebar() {
               <button className=" rounded transition-colors duration-300 hover:bg-neutral-800 p-2 flex items-center">
                 <div className="flex items-center text-white">
                   <AddBoxIcon className="ml-5" />
-                  <span className="tracking-widest ml-10">New Reflection</span>
+                  <span className="tracking-widest ml-10" onClick={() => navigate('/chat')}>New Reflection</span>
                 </div>
               </button>
               <button className=" rounded transition-colors duration-300 hover:bg-neutral-800 p-2 flex items-center">

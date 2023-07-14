@@ -25,6 +25,7 @@ const Login = () => {
       console.log("Login successful!");
       localStorage.setItem("user_id", user_id);
       localStorage.setItem("name", name);
+      console.log(user_id)
       navigate("/home");
     } catch (error) {
       // Handle error
