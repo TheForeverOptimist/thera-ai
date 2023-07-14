@@ -37,7 +37,7 @@ function Cover() {
           <div className="w-[100%] items-center flex justify-around max-[1100px]:inline-block">
             <div className="w-[200px] h-[25vh] bg-[white] mt-[2%] rounded-full flex flex-col justify-around items-center max-[1100px]:w-[90%] max-[1100px]:h-[25%] max-[1100px]:ml-[5%]">
               <h2 className=" text-center text-[black] text-[25px] font-serif">
-                Previous Refelctions
+                Previous Reflections
               </h2>
             </div>
             <div className="w-[250px] h-[32vh] bg-[white] mt-[2%] rounded-full  flex flex-col justify-around items-center max-[1100px]:w-[90%] max-[1100px]:h-[25%] max-[1100px]:ml-[5%]">
