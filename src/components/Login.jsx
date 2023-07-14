@@ -1,30 +1,77 @@
-import React from 'react'
-import './Login.css'
-import Mirror from '../images/mirror_ai.png'
+import React, { useState } from "react";
+import axios from "axios";
+import "./Login.css";
+import { useNavigate } from "react-router-dom";
+import circlesImage from "../images/multiplecircles.svg";
 
-const Login = () => (
-  <div className="bg-black bg-opacity-50 m-auto p-40 rounded-2xl shadow-2xl absolute top-0 left-24 right-0 bottom-0 w-[500px] h-[430px]">
-    <div className="fixed inset-0 z-[-1] block bg-cover bg-no-repeat"></div>
-    <div className="flex flex-col items-start text-[32px] my-div mt-auto font-bold pb-4 text-center">
-      Login Here
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [user_id, setUserId] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post(
+        "https://therabot-backend-7c8e6dea9208.herokuapp.com/login",
+        { email, password }
+      );
+      const { message, user_id, name } = response.data;
+      setMessage(message);
+      setUserId(user_id);
+      console.log("Login successful!");
+      localStorage.setItem("user_id", user_id);
+      localStorage.setItem("name", name);
+      navigate("/home");
+    } catch (error) {
+      // Handle error
+      console.error(error);
+      setMessage("Login failed");
+    }
+  };
+
+  return (
+    <div className="loginScreen">
+      <div className="w-[117px] h-[114px] ml-[831px] mt-[735px] z-[1] bg-white rounded-full relative flex items-center justify-center">
+        <span className="text-black font-bold m-4">Sign Up</span>
+      </div>
+      <div className="w-[117px] h-[114px] ml-[900px] mt-[1px] z-[1] bg-white rounded-full relative flex items-center justify-center">
+        <span className="text-black font-bold m-4">Log In</span>
+      </div>
+      <div className="bg-black m-auto rounded-3xl shadow-2xl absolute top-0 left-0 right-0 bottom-0 w-[1026px] h-[695px]">
+        <div className="mt-[75px] ml-[390px]">
+          <img src={circlesImage} alt="circles" />
+        </div>
+        <div className="flex flex-col text-[63px] mt-0 ml-[208px] font-bold">
+          <div>Welcome</div>
+          <div>Back!</div>
+        </div>
+        <div className="gap-y-[15px] ml-[210px] font-[18px]">Username</div>
+        <input
+          className="w-[635px] h-[73px] rounded-3xl ml-[196px] bg-white"
+          type="text"
+          placeholder="   Your Email Address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <div className="mt-8 ml-[210px] font-[18px]">Password</div>
+        <input
+          className="w-[635px] h-[73px] rounded-3xl ml-[196px] bg-white"
+          type="password"
+          placeholder="   Your Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <div className="ml-[666px] p-2">Forgot password?</div>
+      </div>
+      <div className="ml-[428px] mt-1 text-white">
+        By signing up, you agree to Daily’s <br></br>Terms and Conditions &
+        Privacy Policy.
+      </div>
     </div>
-    <input
-      className="my-1 p-4 border-none rounded-2xl w-full text-[16px]"
-      type="text"
-      placeholder="Your Email Address"
-    />
-    <input
-      className="my-1 p-4 border-none rounded-2xl w-full text-[16px]"
-      type="password"
-      placeholder="Your Password"
-    />
-    <input className="hidden" type="checkbox" id="terms" />
-    <label className="inline-block relative ml-5 mr-10 top-5 w-[20px] h-[20px] cursor-pointer" for="terms"></label>
-    <span>
-      Agree with <a href="https://elevate.app">Terms & Conditions</a>
-    </span>
-    <button>Login</button>
-  </div>
-);
+  );
+};
 
-export default Login
+export default Login;

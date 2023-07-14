@@ -9,12 +9,14 @@ import logo from "../images/Screen_Shot_2023-07-13_at_7.41.33_PM-removebg-previe
 import "./sidebar.css";
 import { useState } from "react";
 
+
 function Sidebar() {
   const [toggleSide, setToggleSide] = useState(false);
 
   const showSide = () => {
     setToggleSide(!toggleSide);
   };
+
 
   return (
     <>
