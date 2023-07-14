@@ -50,7 +50,7 @@ const Login = () => {
         </div>
         <div className="gap-y-[15px] ml-[210px] font-[18px]">Username</div>
         <input
-          className="w-[635px] h-[73px] rounded-3xl ml-[196px] bg-white text-black"
+          className="w-[635px] h-[73px] p-4 rounded-3xl ml-[196px] bg-white text-black"
           type="text"
           placeholder="   Your Email Address"
           value={email}
@@ -58,7 +58,7 @@ const Login = () => {
         />
         <div className="mt-8 ml-[210px] font-[18px]">Password</div>
         <input
-          className="w-[635px] h-[73px] rounded-3xl ml-[196px] bg-white text-black"
+          className="w-[635px] h-[73px] p-4 rounded-3xl ml-[196px] bg-white text-black"
           type="password"
           placeholder="   Your Password"
           value={password}
