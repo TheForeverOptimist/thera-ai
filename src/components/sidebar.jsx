@@ -5,7 +5,7 @@ import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 import AddReactionOutlinedIcon from "@mui/icons-material/AddReactionOutlined";
 import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
 import React from "react";
-import logo from "../images/Screen_Shot_2023-07-13_at_7.41.33_PM-removebg-preview.png";
+import logo from "../images/Screen_Shot_2023-07-14_at_9.52.59_AM-removebg-preview.png";
 import "./sidebar.css";
 import { useState } from "react";
 
@@ -24,7 +24,7 @@ function Sidebar() {
         <>
           <section onClick={showSide} className="side-bar bg-[#000000] max-h-screen w-[350px] flex flex-col justify-between overflow-scroll">
             <div className="m-14 p-6 flex items-center justify-center">
-              <img src={logo} alt="logo" />
+              <img src={logo} alt="logo"/>
             </div>
             <div className="text-gray-500 mx-10 my-2">This Week</div>
             <ul>
@@ -91,7 +91,7 @@ function Sidebar() {
           {" "}
           <section onClick={showSide} className="side-bar bg-[#000000] max-h-screen w-[100px] flex flex-col justify-between">
             <div className="flex items-center justify-center">
-              <img src={logo} alt="logo" className="w-[80%]" />
+              <img src={logo} alt="logo" className="w-[80%] mt-[20%]" />
             </div>
             <div className="mt-8 flex flex-col space-y-4 my-4">
               <button className=" bg-transparent p-2 flex items-center">
