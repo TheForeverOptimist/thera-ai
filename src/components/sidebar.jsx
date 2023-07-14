@@ -18,8 +18,9 @@ function Sidebar() {
   const [person, setPersons] = useState({})
   const [toggleSide, setToggleSide] = useState(false);
   const [activeComponent, setActiveComponent] = useState('cover');
+  const [entryProp, setEntryProp] = useState({})
 
-  const handleComponentChange = (componentName) => {
+  const handleComponentChange = (componentName, entry) => {
     switch (componentName) {
       case "cover":
         setActiveComponent('cover');
@@ -28,19 +29,16 @@ function Sidebar() {
         setActiveComponent('chat');
         break;
       case "previous":
-        const entryProp = {};
-        const propsForPrevious = {
-          entry: {},
-        };
-        setActiveComponent(<Previous {...propsForPrevious} />);
+        setActiveComponent('previous');
+        setEntryProp(entry);
         break;
       default:
         setActiveComponent('cover');
         break;
     }
   };
-  
-  
+
+
 
   const showSide = () => {
     setToggleSide(!toggleSide);
@@ -57,7 +55,8 @@ function Sidebar() {
             },
           }
         );
-        setEntries(response.data)
+        setEntries(response.data.entries)
+        // console.log(entries)
       } catch (error) {
         console.error(error);
       }
@@ -69,7 +68,7 @@ function Sidebar() {
     const fetchPeople = async () => {
       try {
         const response = await axios.get(
-          "https://therabot-backend-7c8e6dea9208.herokuapp.com/people/me",
+          "https://therabot-backend-7c8e6dea9208.herokuapp.com/person/me",
           {
             headers: {
               "user-id": `${localStorage.getItem("user_id")}`,
@@ -97,24 +96,21 @@ function Sidebar() {
             </div>
             <div className="text-gray-500 font-semibold mx-10 my-2">This Week</div>
             <ul>
-              <li className="cursor-pointer px-2 py-1 mx-16 my-2">
-                July 10th, 2023
-              </li>
-              <li className="cursor-pointer px-2 py-1 mx-16 my-2">
-                July 8th, 2023
-              </li>
+              {entries.length > 0 ? (
+                entries.map((entry) => (
+                  <li
+                    className="cursor-pointer px-2 py-1 mx-16 my-2"
+                    key={entry._id}
+                    onClick={() => handleComponentChange('previous', entry)}
+                  >
+                    {format(new Date(entry.creation_date), 'EEEE, MMMM d, yyyy')}
+                  </li>
+                ))
+              ) : (
+                <p>Loading entries...</p>
+              )}
             </ul>
-            <div className="text-gray-500 font-semibold mx-10 my-2">Earlier</div>
-            <ul>
-              <li className="cursor-pointer px-2 py-1 mx-16 my-2"
-              onClick={() => handleComponentChange('previous')}>
-                July 10th, 2023
-              </li>
-              <li className="cursor-pointer px-2 py-1 mx-16 my-2"
-              onClick={() => handleComponentChange('previous')}>
-                July 8th, 2023
-              </li>
-            </ul>
+
             <div className="mt-8 flex flex-col space-y-4 my-4">
               <button className="bg-transparent p-2 flex items-center"
                 onClick={() => handleComponentChange('chat')}>
@@ -198,7 +194,7 @@ function Sidebar() {
           </section>
           {activeComponent === 'cover' && <Cover />}
           {activeComponent === 'chat' && <Chat />}
-          {activeComponent === 'previous' && <Previous />}
+          {activeComponent === 'previous' && <Previous entryProp={entryProp} />}
         </>
       )}
     </>
