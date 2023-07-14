@@ -10,8 +10,8 @@ function Cover() {
       <div className="w-full flex flex-wrap">
         <div className="main">
           <div className="mt-10 bg-black w-[95%] h-[52vh] rounded-[30px] flex justify-between">
-            <div className="w-[30%] flex flex-col justify-center items-center">
-              <h1 className="text-[280%] text-left ml-[10%] max-[1321px]:text-[250%] max-[1129px]:text-[220%] max-[807px]:text-[200%] font-serif font-bold">
+            <div className="w-[30%] flex flex-col justify-center items-center max-[1356px]:w-[35%] max-[1020px]:w-[45%]">
+              <h1 className="text-[260%] text-left ml-[10%] max-[1321px]:text-[250%] max-[1129px]:text-[220%] max-[807px]:text-[200%] font-serif font-bold">
                 Hey {localStorage.name}, welcome back!
               </h1>
             </div>
@@ -41,7 +41,7 @@ function Cover() {
               </h2>
             </div>
             <div className="w-[250px] h-[32vh] bg-[white] mt-[2%] rounded-full  flex flex-col justify-around items-center max-[1100px]:w-[90%] max-[1100px]:h-[25%] max-[1100px]:ml-[5%]">
-              <h2 className="text-center text-[black] text-[25px] font-serif mt-[15%] max-[1100px]:mt-[-2%]">
+              <h2 className="text-center text-[black] text-[25px] w-[90%] font-serif mt-[10%] max-[1100px]:mt-[-2%]">
                 Weekly Mood Tracker
               </h2>
               <img
