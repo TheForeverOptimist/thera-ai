@@ -32,6 +32,7 @@ function Sidebar() {
           }
         );
         setEntries(response.data)
+        console.log(entries)
       } catch (error) {
         console.error(error);
       }
@@ -57,7 +58,7 @@ function Sidebar() {
     };
     fetchPeople();
   }, []);
-
+  
   return (
     <>
       {toggleSide ? (
@@ -71,30 +72,30 @@ function Sidebar() {
             </div>
             <div className="text-gray-500 font-semibold mx-10 my-2">This Week</div>
             <ul>
-              <li className="cursor-pointer px-2 py-1 mx-16 my-2">
+              <li className="cursor-pointer rounded transition-colors duration-300 hover:bg-neutral-800 px-2 py-1 mx-16 my-2">
                 July 10th, 2023
               </li>
-              <li className="cursor-pointer px-2 py-1 mx-16 my-2">
+              <li className="rounded transition-colors duration-300 hover:bg-neutral-800 cursor-pointer px-2 py-1 mx-16 my-2">
                 July 8th, 2023
               </li>
             </ul>
             <div className="text-gray-500 font-semibold mx-10 my-2">Earlier</div>
             <ul>
-              <li className="cursor-pointer px-2 py-1 mx-16 my-2">
+              <li className="rounded transition-colors duration-300 hover:bg-neutral-800 cursor-pointer px-2 py-1 mx-16 my-2">
                 July 10th, 2023
               </li>
-              <li className="cursor-pointer px-2 py-1 mx-16 my-2">
+              <li className="rounded transition-colors duration-300 hover:bg-neutral-800 cursor-pointer px-2 py-1 mx-16 my-2">
                 July 8th, 2023
               </li>
             </ul>
             <div className="mt-8 flex flex-col space-y-4 my-4">
-              <button className=" bg-transparent p-2 flex items-center">
+              <button className=" rounded transition-colors duration-300 hover:bg-neutral-800 p-2 flex items-center">
                 <div className="flex items-center text-white">
                   <AddBoxIcon className="ml-5" />
                   <span className="tracking-widest ml-10">New Reflection</span>
                 </div>
               </button>
-              <button className=" bg-transparent p-2 flex items-center">
+              <button className=" rounded transition-colors duration-300 hover:bg-neutral-800 p-2 flex items-center">
                 <div className="flex items-center text-white">
                   <LibraryBooksOutlinedIcon className="ml-5" />
                   <span className="tracking-widest ml-4">
@@ -102,19 +103,19 @@ function Sidebar() {
                   </span>
                 </div>
               </button>
-              <button className=" bg-transparent p-2 flex items-center">
+              <button className=" rounded transition-colors duration-300 hover:bg-neutral-800 p-2 flex items-center">
                 <div className="flex items-center text-white">
                   <GradeOutlinedIcon className="ml-5" />
                   <span className="tracking-widest ml-10">Achievements</span>
                 </div>
               </button>
-              <button className=" bg-transparent p-2 flex items-center">
+              <button className=" rounded transition-colors duration-300 hover:bg-neutral-800 p-2 flex items-center">
                 <div className="flex items-center text-white">
                   <AddReactionOutlinedIcon className="ml-5" />
                   <span className="tracking-widest ml-10">Mood Tracker</span>
                 </div>
               </button>
-              <button className=" bg-transparent p-2 flex items-center">
+              <button className=" rounded transition-colors duration-300 hover:bg-neutral-800 p-2 flex items-center">
                 <div className="flex items-center text-white">
                   <PeopleOutlineOutlinedIcon className="ml-5" />
                   <span className="tracking-widest ml-10">Community</span>
