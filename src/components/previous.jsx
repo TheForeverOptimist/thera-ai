@@ -5,13 +5,6 @@ import { format } from 'date-fns';
 function Previous({ entryProp, peopleProp }) {
     const entry = entryProp
     const persons = peopleProp?.persons
-    // const persons = () => {
-    //     if (peopleProp.persons) {
-    //         return peopleProp.persons
-    //     } else {
-    //         return []
-    //     }
-    // }
     const responseDictionary = {
         1: "That’s so unfortunate, what happened?",
         2: "Oh no, what happened?",
@@ -53,7 +46,7 @@ function Previous({ entryProp, peopleProp }) {
                                     return <span> {person.name} </span>;
                                 })
                             ) : (
-                                <span></span>
+                                <span>No persons available</span>
                             )}
 
                         </div>
@@ -94,4 +87,4 @@ function Previous({ entryProp, peopleProp }) {
 
 }
 
-export default Previous
+export default Previous;
