@@ -8,13 +8,39 @@ import logo from "../images/logo_dm.png";
 import "./sidebar.css";
 import { format } from 'date-fns';
 import axios from "axios";
+import { Cover } from ".";
+import { Chat } from ".";
+import { Previous } from "."
 
 
 function Sidebar() {
   const [entries, setEntries] = useState([])
   const [person, setPersons] = useState({})
-
   const [toggleSide, setToggleSide] = useState(false);
+  const [activeComponent, setActiveComponent] = useState('cover');
+
+  const handleComponentChange = (componentName) => {
+    switch (componentName) {
+      case "cover":
+        setActiveComponent('cover');
+        break;
+      case "chat":
+        setActiveComponent('chat');
+        break;
+      case "previous":
+        const entryProp = {};
+        const propsForPrevious = {
+          entry: {},
+        };
+        setActiveComponent(<Previous {...propsForPrevious} />);
+        break;
+      default:
+        setActiveComponent('cover');
+        break;
+    }
+  };
+  
+  
 
   const showSide = () => {
     setToggleSide(!toggleSide);
@@ -80,15 +106,18 @@ function Sidebar() {
             </ul>
             <div className="text-gray-500 font-semibold mx-10 my-2">Earlier</div>
             <ul>
-              <li className="cursor-pointer px-2 py-1 mx-16 my-2">
+              <li className="cursor-pointer px-2 py-1 mx-16 my-2"
+              onClick={() => handleComponentChange('previous')}>
                 July 10th, 2023
               </li>
-              <li className="cursor-pointer px-2 py-1 mx-16 my-2">
+              <li className="cursor-pointer px-2 py-1 mx-16 my-2"
+              onClick={() => handleComponentChange('previous')}>
                 July 8th, 2023
               </li>
             </ul>
             <div className="mt-8 flex flex-col space-y-4 my-4">
-              <button className=" bg-transparent p-2 flex items-center">
+              <button className="bg-transparent p-2 flex items-center"
+                onClick={() => handleComponentChange('chat')}>
                 <div className="flex items-center text-white">
                   <AddBoxIcon className="ml-5" />
                   <span className="tracking-widest ml-10">New Reflection</span>
@@ -167,6 +196,9 @@ function Sidebar() {
               </button>
             </div>
           </section>
+          {activeComponent === 'cover' && <Cover />}
+          {activeComponent === 'chat' && <Chat />}
+          {activeComponent === 'previous' && <Previous />}
         </>
       )}
     </>

@@ -2,13 +2,11 @@ import "./cover.css";
 import React from "react";
 import { PiPencilLineLight } from "react-icons/pi";
 import img from "../Assets/img.png";
-import Sidebar from "./Sidebar";
 
 function Cover() {
   return (
     <>
       <div className="app">
-        <Sidebar />
         <div className="w-full flex flex-wrap">
           <div className="main">
             <div className="mt-10 bg-black w-[95%] h-[52vh] rounded-[30px] flex justify-between">
