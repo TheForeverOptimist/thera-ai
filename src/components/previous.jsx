@@ -1,5 +1,4 @@
 import './Previous.css';
-import { Sidebar } from ".";
 import React from "react";
 import { format } from 'date-fns';
 
@@ -48,7 +47,6 @@ function Previous() {
 
     return (
         <div className="app">
-            <Sidebar />
             <section className="main">
                 <div className="chat-container bg-[#1A1A1A] h-[42rem] mt-16 rounded-3xl w-[52rem] pr-5 p-5 flex justify-end flex-col">
                     <div
@@ -58,13 +56,17 @@ function Previous() {
                     ><div>
                             {format(new Date(entry.creation_date), 'EEEE, MMMM d, yyyy')}
                         </div>
-                        <div>
+                        <div
+                    className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
+                  >
                             How are you feeling today?
                         </div>
                         <div>
                             **Smiley Faces here w/ {entry.mood} selected**
                         </div>
-                        <div>
+                        <div
+                    className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
+                  >
                             Who would like to talk about?
                         </div>
                         <div>
