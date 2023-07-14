@@ -44,7 +44,7 @@ const Login = () => {
         <div className="mt-[75px] ml-[390px]">
           <img src={circlesImage} alt="circles" />
         </div>
-        <div className="flex flex-col text-[63px] mt-0 ml-[208px] font-bold">
+        <div className="flex flex-col text-[63px] mt-0 ml-[208px] font-bold font-calistoga">
           <div>Welcome</div>
           <div>Back!</div>
         </div>
