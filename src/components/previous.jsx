@@ -4,14 +4,7 @@ import { format } from 'date-fns';
 
 function Previous({ entryProp, peopleProp }) {
     const entry = entryProp
-    const persons = peopleProp?.persons
-    // const persons = () => {
-    //     if (peopleProp.persons) {
-    //         return peopleProp.persons
-    //     } else {
-    //         return []
-    //     }
-    // }
+    const persons = peopleProp.persons
     const responseDictionary = {
         1: "That’s so unfortunate, what happened?",
         2: "Oh no, what happened?",
@@ -45,7 +38,7 @@ function Previous({ entryProp, peopleProp }) {
                             Who would like to talk about?
                         </div>
                         <div>
-                            {persons?.length > 0 ? (
+                            {persons.length > 0 ? (
                                 persons.map((person) => {
                                     if (person._id === entry.person) {
                                         return <span> ** {person.name} ** </span>;
@@ -53,7 +46,7 @@ function Previous({ entryProp, peopleProp }) {
                                     return <span> {person.name} </span>;
                                 })
                             ) : (
-                                <span></span>
+                                <span>No persons available</span>
                             )}
 
                         </div>
