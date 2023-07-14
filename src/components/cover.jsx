@@ -2,7 +2,6 @@ import "./cover.css";
 import React from "react";
 import { PiPencilLineLight } from "react-icons/pi";
 import img from "../Assets/img.png";
-import Sidebar from "./Sidebar";
 import circlesImage from "../images/multiplecircles.svg";
 
 

@@ -2,8 +2,9 @@ import './Previous.css';
 import React from "react";
 import { format } from 'date-fns';
 
-function Previous({entryProp}) {
+function Previous({ entryProp, peopleProp }) {
     const entry = entryProp
+    const persons = peopleProp.persons
     const responseDictionary = {
         1: "That’s so unfortunate, what happened?",
         2: "Oh no, what happened?",
@@ -24,22 +25,34 @@ function Previous({entryProp}) {
                             {format(new Date(entry.creation_date), 'EEEE, MMMM d, yyyy')}
                         </div>
                         <div
-                    className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
-                  >
+                            className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
+                        >
                             How are you feeling today?
                         </div>
                         <div>
                             **Smiley Faces here w/ {entry.mood} selected**
                         </div>
                         <div
-                    className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
-                  >
+                            className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
+                        >
                             Who would like to talk about?
                         </div>
                         <div>
-                            ** Bubbles of People **
+                            {persons.length > 0 ? (
+                                persons.map((person) => {
+                                    if (person._id === entry.person) {
+                                        return <span> ** {person.name} ** </span>;
+                                    }
+                                    return <span> {person.name} </span>;
+                                })
+                            ) : (
+                                <span>No persons available</span>
+                            )}
+
                         </div>
-                        <div>
+                        <div
+                            className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
+                        >
                             {responseDictionary[entry.mood]}
                         </div>
 

@@ -4,7 +4,6 @@ import GradeOutlinedIcon from "@mui/icons-material/GradeOutlined";
 import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 import AddReactionOutlinedIcon from "@mui/icons-material/AddReactionOutlined";
 import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
-import React from "react";
 import logo from "../images/Screen_Shot_2023-07-14_at_9.52.59_AM-removebg-preview.png";
 import "./sidebar.css";
 import { format } from 'date-fns';
@@ -32,14 +31,13 @@ function Sidebar() {
       case "previous":
         setActiveComponent('previous');
         setEntryProp(entry);
+        
         break;
       default:
         setActiveComponent('cover');
         break;
     }
   };
-
-
 
   const showSide = () => {
     setToggleSide(!toggleSide);
@@ -93,9 +91,10 @@ function Sidebar() {
             className="side-bar bg-[#000000] max-h-screen w-[350px] flex flex-col justify-between"
           >
             <div className="m-14 p-6 flex items-center justify-center">
-              <img src={logo} alt="logo"/>
+              <img src={logo} alt="logo"
+              onClick={() => handleComponentChange('cover')}/>
             </div>
-            <div className="text-gray-500 font-semibold mx-10 my-2">This Week</div>
+            <div className="text-gray-500 font-semibold mx-10 my-2">Earlier This Month</div>
             <ul>
               {entries.length > 0 ? (
                 entries.map((entry) => (
@@ -194,8 +193,8 @@ function Sidebar() {
             </div>
           </section>
           {activeComponent === 'cover' && <Cover />}
-          {activeComponent === 'chat' && <Chat />}
-          {activeComponent === 'previous' && <Previous entryProp={entryProp} />}
+          {activeComponent === 'chat' && <Chat peopleProp={person}/>}
+          {activeComponent === 'previous' && <Previous entryProp={entryProp} peopleProp={person}/>}
         </>
       )}
     </>
