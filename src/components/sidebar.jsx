@@ -1,22 +1,62 @@
-import { Previous } from ".";
+import React, { useEffect, useState } from "react";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import GradeOutlinedIcon from "@mui/icons-material/GradeOutlined";
 import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 import AddReactionOutlinedIcon from "@mui/icons-material/AddReactionOutlined";
 import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
-import React from "react";
 import logo from "../images/Screen_Shot_2023-07-13_at_7.41.33_PM-removebg-preview.png";
 import "./sidebar.css";
-import { useState } from "react";
+import { format } from 'date-fns';
+import axios from "axios";
 
 
 function Sidebar() {
+  const [entries, setEntries] = useState([])
+  const [person, setPersons] = useState({})
+
   const [toggleSide, setToggleSide] = useState(false);
 
   const showSide = () => {
     setToggleSide(!toggleSide);
   };
 
+  useEffect(() => {
+    const fetchEntries = async () => {
+      try {
+        const response = await axios.get(
+          "https://therabot-backend-7c8e6dea9208.herokuapp.com/entry/me",
+          {
+            headers: {
+              "user-id": `${localStorage.getItem("user_id")}`,
+            },
+          }
+        );
+        setEntries(response.data)
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchEntries();
+  }, []);
+
+  useEffect(() => {
+    const fetchPeople = async () => {
+      try {
+        const response = await axios.get(
+          "https://therabot-backend-7c8e6dea9208.herokuapp.com/people/me",
+          {
+            headers: {
+              "user-id": `${localStorage.getItem("user_id")}`,
+            },
+          }
+        );
+        setPersons(response.data)
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchPeople();
+  }, []);
 
   return (
     <>
@@ -83,8 +123,6 @@ function Sidebar() {
               <p className="text-gray-500 text-sm mx-12">Made by the Team-1</p>
             </nav>
           </section>
-
-          <Previous />
         </>
       ) : (
         <>
