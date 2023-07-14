@@ -84,6 +84,7 @@ function Sidebar() {
 
   return (
     <>
+      <div className="app">
       {toggleSide ? (
         <>
           <section
@@ -153,6 +154,9 @@ function Sidebar() {
               </p>
             </nav>
           </section>
+          {activeComponent === 'cover' && <Cover />}
+          {activeComponent === 'chat' && <Chat />}
+          {activeComponent === 'previous' && <Previous entryProp={entryProp} />}
         </>
       ) : (
         <>
@@ -197,6 +201,8 @@ function Sidebar() {
           {activeComponent === 'previous' && <Previous entryProp={entryProp} peopleProp={person}/>}
         </>
       )}
+      </div>
+  
     </>
   );
 }
