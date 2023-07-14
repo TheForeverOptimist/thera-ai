@@ -158,12 +158,9 @@ function Chat() {
         <div className="overflow-y-auto" ref={chatParent}>
           {felt()}
           {chat.map((message, i) =>
-            mood ? (
+            mood && i==1 ? (
               <>
-                <div
-                  id="chtbox"
-                  className="chat chat-end flex flex-col gap-2"
-                >
+              <div id="chtbox" className="chat chat-end flex flex-col gap-2">
                   <div
                     className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
                     key={i}
@@ -171,45 +168,32 @@ function Chat() {
                     {message.text}
                   </div>
                 </div>
-                <div
-                  id="chtbox"
-                  className="chat chat-start flex flex-col gap-2"
-                >
-                  <div
-                    className="chat-bubble max-w-xl break-normal text-start ml-3 bg-stone-50 text-[#1A1A1A] mb-4"
-                    key='ai'
-                  >
-                    {entryPerson()}
-                    <div className="flex gap-4 p-4 text-2xl text-black"></div>
-                  </div>
-                </div>
-              </>
+              <div
+              id="chtbox"
+              className="chat chat-start flex flex-col gap-2"
+            >
+              <div
+                className="chat-bubble max-w-xl break-normal text-start ml-3 bg-stone-50 text-[#1A1A1A] mb-4"
+                key="ai2"
+              >
+                What happened today?
+              </div>
+            </div>
+            </>
             ) : i == 1 ? (
               <>
-                <div
-                  id="chtbox"
-                  className="chat chat-end flex flex-col gap-2"
-                >
+              
+                <div id="chtbox" className="chat chat-end flex flex-col gap-2">
                   <div
                     className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
                     key={i}
                   >
                     {message.text}
-                  </div>
-                </div>
-                <div
-                  id="chtbox"
-                  className="chat chat-start flex flex-col gap-2"
-                >
-                  <div
-                    className="chat-bubble max-w-xl break-normal text-start ml-3 bg-stone-50 text-[#1A1A1A] mb-4"
-                    key='ai2'
-                  >
-                    What happened today?
                   </div>
                 </div>
               </>
             ) : (
+              
               <div id="chtbox" className="chat chat-end flex flex-col gap-2">
                 <div
                   className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
@@ -220,12 +204,8 @@ function Chat() {
               </div>
             )
           )}
-
-          {/* {entryPerson()} */}
         </div>
-
       </div>
-
       <div className="bottom-section flex">
         <form
           onSubmit={handleSubmit}
