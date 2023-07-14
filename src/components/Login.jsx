@@ -18,11 +18,12 @@ const Login = () => {
         "https://therabot-backend-7c8e6dea9208.herokuapp.com/login",
         { email, password }
       );
-      const { message, user_id } = response.data;
+      const { message, user_id, name } = response.data;
       setMessage(message);
       setUserId(user_id);
       console.log("Login successful!");
       localStorage.setItem("user_id", user_id);
+      localStorage.setItem("name", name);
       navigate("/home");
     } catch (error) {
       // Handle error
