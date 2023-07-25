@@ -12,8 +12,36 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [user_id, setUserId] = useState("");
+  const [name, setName] = useState("");
+  const [yearOfBirth, setYearOfBirth] = useState("")
 
   const navigate = useNavigate();
+
+  const handleSignUp = async () => {
+    try {
+      const response = await axios.post("https://localhost:8000/signup", {
+        email,
+        password,
+        name,
+        year_of_birth: yearOfBirth,
+      });
+      //handle response from backend
+      const { message, user_id } = response.data;
+      setMessage(message);
+
+      //now use the user_id for any further operations like putting it inlocal storage
+      localStorage.setItem('user_id', user_id);
+      localStorage.setItem('name', name)
+
+
+      //navigate to home screen
+      navigate('/home')
+    } catch(error) {
+      //handle error
+      console.error(error);
+      setMessage("Signup Failed!")
+    } 
+  }
 
   const handleLogin = async () => {
     try {
