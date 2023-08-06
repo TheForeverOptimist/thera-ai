@@ -2,10 +2,10 @@ import "./cover.css";
 import React from "react";
 import { PiPencilLineLight } from "react-icons/pi";
 import img from "../Assets/img.png";
-import circlesImage from "../images/multiplecircles.svg";
 import mood from "../images/mood.png";
 import dev from "../images/developer.png";
-import ux from "../images/Ux.png"
+import ux from "../images/Ux.png";
+import bigmood from "../images/bigmood.png";
 
 function Cover() {
   return (
@@ -61,7 +61,7 @@ function Cover() {
             </div>
           </div>
         </div>
-        <div className="w-[95%] h-[200vh] border-[2px]">
+        <div className="w-[95%] h-[200vh]">
           <div className="w-[100%] h-[25%] flex justify-center flex-wrap">
             <div className="bg-[white] w-[50%] h-[50%] mt-[5%] rounded-[45px] flex flex-wrap">
               <div className="w-[100%] h-[15%] flex justify-center">
@@ -86,7 +86,7 @@ function Cover() {
               </button>
             </div>
           </div>
-          <div className="w-[100%] h-[40%] flex flex-wrap">
+          <div className="w-[100%] h-[40%] flex flex-wrap justify-center">
             <div className="w-[100%] flex items-center justify-center">
               <h1 className="font-serif mt-[5%] text-[black] text-xl font-bold">
                 Meet Our Team
@@ -213,6 +213,30 @@ function Cover() {
                 <div className="w-[40%]">
                   <img src={ux} alt="uxbulb" className="w-[100%] mt-[10%]" />
                 </div>
+              </div>
+            </div>
+            <div className="w-[95%] h-[70%] bg-[black] rounded-[45px] flex">
+              <div className="w-[40%] flex flex-col justify-center">
+                <div className="h-[25%] w-[100%]">
+                  <div className="w-[100%] h-[50%] flex flex-col justify-end">
+                    <h1 className="font-serif font-bold text-2xl ml-[10%]">Enter your weekly</h1>
+                  </div>
+                  <div className="w-[100%] h-[50%]">
+                    <h1 className="font-serif font-bold text-2xl ml-[10%]">mood tracker</h1>
+                  </div>
+                </div>
+                <div className="h-[50%] w-[100%]">
+                  <p className="font-serif ml-[10%]">
+                    Description: Joy and happiness are represented by yellow,
+                    sadness by light blue, grief and depression by dark blue,
+                    acceptance by light green, trust, love, and admiration by
+                    dark green, anger by red, and fear by orange. Choose the
+                    color that mostly represents how you are feeling today.
+                  </p>
+                </div>
+              </div>
+              <div className="w-[60%] flex flex-col items-center justify-center">
+                <img src={bigmood} alt="chart" className="w-[100%]" />
               </div>
             </div>
           </div>
