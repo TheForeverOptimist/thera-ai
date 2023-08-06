@@ -16,6 +16,7 @@ body {
 }
 
 .app {
+  overflow-y: scroll;
   background-image: url('../src/images/dashbg.png');
   background-size: cover;
   background-repeat: no-repeat;
