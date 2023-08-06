@@ -13,6 +13,14 @@ function Previous({ entryProp, peopleProp }) {
         5: "That’s wonderful! What happened??",
     };
 
+    const Smilies = {
+        one: "😡",
+        two: "🙁",
+        three: "😐",
+        four: "🙂",
+        five: "😄"
+    }
+
     return (
             <section className="main">
                 <div className="chat-container bg-[#1A1A1A] h-[42rem] mt-16 rounded-3xl w-[52rem] pr-5 p-5 flex justify-end flex-col">
@@ -20,7 +28,7 @@ function Previous({ entryProp, peopleProp }) {
                         id="chtbox"
                         className="chat chat-end flex flex-col gap-2 overflow-y-auto"
 
-                    ><div>
+                    ><div className='w-[100%] flex flex-row justify-center items-center text-gray-500 text-[15px]'>
                             {format(new Date(entry.creation_date), 'EEEE, MMMM d, yyyy')}
                         </div>
                         <div
@@ -28,8 +36,12 @@ function Previous({ entryProp, peopleProp }) {
                         >
                             How are you feeling today?
                         </div>
-                        <div>
-                            **Smiley Faces here w/ {entry.mood} selected**
+                        <div className='text-[40px]'>
+                            {entry.mood === 1 ? Smilies.one : null}
+                            {entry.mood === 2 ? Smilies.two : null}
+                            {entry.mood === 3 ? Smilies.three : null}
+                            {entry.mood === 4 ? Smilies.four: null}
+                            {entry.mood === 5 ? Smilies.five : null}
                         </div>
                         <div
                             className="chat-bubble max-w-xl break-normal text-start mr-3 bg-stone-50 text-[#1A1A1A] mb-4"
@@ -65,7 +77,7 @@ function Previous({ entryProp, peopleProp }) {
                                 >
                                     {statement[1]}
                                 </div>
-                                <div
+                                <div className=' text-gray-500 text-[15px]'
                                     key={`${entry._id}-statement.time-${i}`}
                                 >
                                     {format(new Date(statement[0]), 'h:mm a')}

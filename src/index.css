@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Oswald&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Open+Sans:wght@300;400;500;600;700;800&family=Oswald&display=swap');
 
 * {
   color: #fff;
@@ -15,6 +16,7 @@ body {
 }
 
 .app {
+  overflow-y: scroll;
   background-image: url('../src/images/dashbg.png');
   background-size: cover;
   background-repeat: no-repeat;
